@@ -17,11 +17,5 @@
       "binding": "BUCKET",
       "bucket_name": "siyuanjiang-files"
     }
-  ],
-  "routes": [
-    {
-      "pattern": "siyuanjiang.com",
-      "custom_domain": true
-    }
   ]
 }

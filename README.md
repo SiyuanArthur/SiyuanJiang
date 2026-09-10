@@ -39,10 +39,14 @@ npm run dev
    npm run deploy
    ```
 
-5. 在 Cloudflare Zero Trust 中为 `siyuanjiang.com` 创建 Access 应用，只允许你的邮箱访问。完成后再把域名切换到这个 Worker，避免私人内容短暂公开。
+5. 先使用 Cloudflare 提供的 `*.workers.dev` 地址测试待办、笔记和文件上传。
+
+6. 在 Cloudflare Zero Trust 中为 `siyuanjiang.com` 创建 Access 应用，只允许你的邮箱访问。
+
+7. 在 Worker 的 Settings > Domains & Routes 中添加 `siyuanjiang.com` Custom Domain。完成后再删除旧 OpenAI DNS 记录，避免私人内容短暂公开。
 
 ## 域名
 
-`wrangler.jsonc` 已把 `siyuanjiang.com` 配置为 Worker 的 Custom Domain。域名必须加入同一个 Cloudflare 账户，并由 Cloudflare 管理 DNS。部署成功后，Cloudflare 会自动创建 Worker 域名记录和 HTTPS 证书。
+域名必须加入部署 Worker 的同一个 Cloudflare 账户，并由 Cloudflare 管理 DNS。添加 Custom Domain 后，Cloudflare 会自动创建 Worker 域名记录和 HTTPS 证书。
 
 确认新网站、数据库、文件上传和访问保护都正常后，再从旧托管平台移除自定义域名。
