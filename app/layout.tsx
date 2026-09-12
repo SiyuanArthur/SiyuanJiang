@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Siyuan 的个人空间",
-  description: "日常计划、随手写作、档案收藏与技能筆记。",
+  title: "Siyuan · 个人工作台",
+  description: "目标、行动、记录。把想做的事，一步一步变成现实。",
   other: {
     "codex-preview": "development",
   },
