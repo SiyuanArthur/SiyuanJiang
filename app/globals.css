@@ -1468,3 +1468,88 @@ main {
     flex-basis: 100%;
   }
 }
+.study-panel {
+  padding: 28px;
+  margin-bottom: 24px;
+}
+.study-panel p {
+  line-height: 1.75;
+}
+.study-panel details {
+  border-top: 1px solid #e2e5dc;
+  padding: 18px 0;
+}
+.study-panel summary {
+  cursor: pointer;
+  font-weight: 650;
+  line-height: 1.7;
+}
+.study-panel summary span {
+  font-weight: 400;
+}
+.study-panel ol {
+  padding-left: 24px;
+  line-height: 1.9;
+}
+.study-panel li {
+  margin: 10px 0;
+}
+.study-panel a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.nutrition-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+.nutrition-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.nutrition-form input,
+.nutrition-form select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #d9dfd3;
+  border-radius: 10px;
+  background: white;
+}
+.nutrition-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.nutrition-stats > div {
+  padding: 20px;
+  background: #f0f4e8;
+  border-radius: 16px;
+}
+.nutrition-stats strong {
+  display: block;
+  font-size: 25px;
+  margin-top: 8px;
+}
+.nutrition-result,
+.nutrition-entry {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 0;
+}
+.nutrition-result > strong {
+  font-size: 30px;
+}
+.nutrition-entry {
+  border-bottom: 1px solid #e2e5dc;
+}
+.nutrition-entry > span {
+  flex: 1;
+  min-width: 150px;
+}

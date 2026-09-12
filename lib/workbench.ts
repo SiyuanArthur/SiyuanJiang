@@ -33,6 +33,37 @@ export const taskSchema = z.object({
 });
 export const workspaceSchema = z.object({
   version: z.literal(1),
+  learning: z.array(z.string().max(100)).max(100).optional(),
+  nutrition: z
+    .object({
+      profile: z
+        .object({
+          age: z.number().min(18).max(100),
+          height: z.number().min(100).max(230),
+          weight: z.number().min(30).max(400),
+          sex: z.enum(["male", "female"]),
+          activity: z.union([
+            z.literal(1.2),
+            z.literal(1.375),
+            z.literal(1.55),
+            z.literal(1.725),
+          ]),
+          deficit: z.union([z.literal(0), z.literal(300), z.literal(500)]),
+        })
+        .optional(),
+      diary: z
+        .array(
+          z.object({
+            id: z.string(),
+            date,
+            name: z.string().min(1).max(100),
+            grams: z.number().positive().max(10000),
+            per100: z.number().min(0).max(1000),
+          }),
+        )
+        .max(3000),
+    })
+    .optional(),
   settings: z.object({
     name: z.string().min(1).max(60),
     start: date,

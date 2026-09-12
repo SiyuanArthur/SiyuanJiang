@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import NutritionPanel from "@/components/nutrition-panel";
+import LearningGuide from "@/components/learning-guide";
 import {
   LayoutDashboard,
   Route,
@@ -820,6 +822,9 @@ export default function Workbench() {
                   添加这条路线的任务
                 </button>
               </div>
+              {track === "career" && (
+                <LearningGuide w={w} busy={busy} save={save} />
+              )}
               {Array.from(
                 new Set(
                   w.tasks
@@ -887,6 +892,12 @@ export default function Workbench() {
           )}
           {view === "health" && (
             <>
+              <NutritionPanel
+                w={w}
+                today={localDate()}
+                busy={busy}
+                save={save}
+              />
               <section className="health-grid">
                 <div className="panel">
                   <p className="eyebrow">LATEST CHECK-IN</p>
